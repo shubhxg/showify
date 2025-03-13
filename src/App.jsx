@@ -1,10 +1,10 @@
-import Card from "./Components/Card.jsx";
+import Card from "./components/Card";
 import seriesData from "./data/seriesdata.json"
 
 export default function App() {
   return (
-    <section className="main flex flex-col">
-      <header className="text-center max-w-100">
+    <section>
+      <header className="text-center max-w-full">
         <h1 className="mt-8 text-3xl tracking-tighter font-bold">
           Welcome to{" "}
           <span className="bg-gradient-to-r from-violet-500 to-blue-500 bg-clip-text text-transparent animate-pulse">
