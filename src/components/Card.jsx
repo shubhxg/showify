@@ -10,7 +10,7 @@ export default function Card({ imgSource, name, rating, isNerdy }) {
 
   return (
     <div
-      className="card py-3 px-3 ease-out duration-300 rounded-xl hover:bg-[#282346] hover:outline outline-violet-900 outline-2"
+      className="card py-3 px-3 ease-in-out duration-300 rounded-xl hover:bg-[#282346] hover:outline-violet-900 hover:outline-1"
       onClick={() => {
         setCount((prevState) => prevState + 1);
       }}
