@@ -1,12 +1,11 @@
 @import "tailwindcss";
 
 :root {
-  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
   color: rgba(255, 255, 255, 0.87);
-  background: linear-gradient(to bottom, #0b0324, #2e053f);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -14,10 +13,24 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-body {
-  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  font-weight: 400;
-  display: flex;
-  justify-content: center;
-  color: white;
+section {
+  background: linear-gradient(to bottom, rgba(11, 3, 36, 0.9), rgba(46, 5, 63)), url("/public/landing.jpg");
+  background-size: cover;
+}
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animate-gradient-text {
+  background-size: 200% 200%;
+  animation: gradientAnimation 3s infinite linear;
 }
