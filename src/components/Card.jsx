@@ -21,10 +21,10 @@ export default function Card({ imgSource, name, rating, isNerdy }) {
         alt="Card"
         
       />
-      <h3 className="text-xl mt-1 font-bold">{name}</h3>
-      <h5 className="text-sm ">⭐ {rating}</h5>
+      <h3 className="text-2xl my-1 font-bold flex">{name}</h3>
+      <h5 className="text-md flex">⭐ {rating}</h5>
       <div className="flex justify-between">
-        <h5 className="text-xs">
+        <h5 className="text-md mt-2">
           {isNerdy ? "Nerdy Show" : "Drama/Comedy"} {count || null}
         </h5>
         <button
