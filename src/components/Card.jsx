@@ -16,10 +16,10 @@ export default function Card({ imgSource, name, rating, isNerdy }) {
       }}
     >
       <img
-        className="object-cover mb-4 w-48 h-40 rounded-lg"
+        className="object-cover mb-4 w-48 h-40 rounded-lg w-[300px] h-[250px]"
         src={imgSource}
         alt="Card"
-        width={"200px"}
+        
       />
       <h3 className="text-xl mt-1 font-bold">{name}</h3>
       <h5 className="text-sm ">⭐ {rating}</h5>

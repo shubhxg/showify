@@ -17,7 +17,7 @@ export default function App() {
         </h6>
         <br />
       </header>
-      <div className="card-container">
+      <div className="text-center card-container max-w-full sm:mx-30">
         {seriesData.map((series) => {
           return (
             // passing the props to the card component
