@@ -18,7 +18,7 @@ export default function App() {
         </h6>
         <br />
       </header>
-      <div className="card-container flex justify-center flex-wrap gap-4 max-w-full sm:mx-30">
+      <div className="card-container flex justify-center flex-wrap gap-8 max-w-full sm:mx-30">
         {seriesData.map((series) => {
           return (
             // passing the props to the card component
