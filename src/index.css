@@ -14,8 +14,9 @@
 }
 
 section {
-  background: linear-gradient(to bottom, rgba(11, 3, 36, 0.9), rgb(21, 3, 33)), url("/public/landing.jpg");
+  background: linear-gradient(to bottom, rgba(11, 3, 36, 0.9), rgb(29, 3, 33)), url("landing.jpg");
   background-size: cover;
+  background-position: top;
 }
 
 @keyframes gradientAnimation {
@@ -34,3 +35,27 @@ section {
   background-size: 200% 200%;
   animation: gradientAnimation 3s infinite linear;
 }
+
+@keyframes shinyEffect {
+  0% {
+    background-position: -200% 0;
+  }
+  
+}
+
+.card:hover {
+  position: relative;
+  background: linear-gradient(
+    110deg,
+    transparent 0%,
+    transparent 20%,
+    rgba(48, 6, 93, 0.9) 45%,
+    rgba(48, 6, 93, 0.9) 50%,
+    rgba(37, 4, 57, 0.9) 55%,
+    transparent 100%,
+    transparent 100%
+  );
+  background-size: 200% 200%;
+  animation: shinyEffect 0.8s linear;
+}
+
