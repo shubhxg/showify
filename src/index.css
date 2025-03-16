@@ -14,7 +14,7 @@
 }
 
 section {
-  background: linear-gradient(to bottom, rgba(11, 3, 36, 0.9), rgba(46, 5, 63)), url("/public/landing.jpg");
+  background: linear-gradient(to bottom, rgba(11, 3, 36, 0.9), rgb(21, 3, 33)), url("/public/landing.jpg");
   background-size: cover;
 }
 
