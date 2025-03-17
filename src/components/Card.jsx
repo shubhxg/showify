@@ -10,13 +10,13 @@ export default function Card({ imgSource, name, rating, isNerdy }) {
 
   return (
     <div
-      className="cursor-pointer card py-3 px-3 duration-300 ease-out rounded-2xl bg-[#2d065795] hover:bg-[#494871] outline-violet-900 outline-1 hover:outline-violet-600 hover:outline-1"
+      className="cursor-pointer card py-3 px-3 duration-300 ease-out rounded-2xl  hover:bg-[#494871] outline-[#331c5c] outline-1 hover:outline-violet-600 hover:outline-1"
       onClick={() => {
         setCount((prevState) => prevState + 1);
       }}
     >
       <img
-        className="object-cover mb-4 rounded-xl w-[280px] h-[250px]"
+        className="object-cover mb-4 rounded-xl w-[250px] h-[200px]"
         src={imgSource}
         alt="Card"
       />
