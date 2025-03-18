@@ -1,8 +1,19 @@
+import { useState } from "react";
 import Card from "./components/Card";
 import Header from "./components/Header";
 import Search from "./components/Search";
-import seriesData from "./data/seriesdata.json"
-import { useState } from "react";
+import seriesData from "./data/seriesdata.json";
+import API_BASE_URL from "./constants/constant"
+
+const API_KEY = import.meta.env.VITE_TMDB_API_KEY;
+const API_OPTIONS = {
+  method: "GET",
+  headers: {
+    accept: "application/json",
+    Authorization: `Bearer ${API_KEY}`,
+  }
+};
+
 
 export default function App() {
   // defined here because its a global state
