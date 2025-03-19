@@ -51,7 +51,6 @@ export default function App() {
       <Search searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
       <section className="all-movies">
         {errorMessage && <p className="text-red-500">{errorMessage}</p>}
-        <h2>All Movies</h2>
       </section>
       <br />
       <div className="card-container flex justify-center flex-wrap gap-6 max-w-full sm:mx-30">
