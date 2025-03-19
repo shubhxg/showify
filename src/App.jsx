@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Card from "./components/Card";
 import Header from "./components/Header";
 import Search from "./components/Search";
@@ -18,11 +18,41 @@ const API_OPTIONS = {
 export default function App() {
   // defined here because its a global state
   const [searchTerm, setSearchTerm] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
+
+  const fetchMovies = async () => {
+    try {
+      const endpoint = `${API_BASE_URL}/discover/movie?sort_by=popularity.desc`;
+      const response = await fetch(endpoint, API_OPTIONS);
+
+      if (!response.ok) {
+        throw new Error("Failed to fetch movies");
+      }
+      const data = await response.json();
+
+      if (data.Response === 'False') {
+        setErrorMessage(data.Error || 'Failed to fetch movies');
+      }
+
+      console.log(data);
+    } catch (error) {
+      console.log(`Error fetching movies: ${error}`);
+      setErrorMessage(`${error}. Please try again later`);
+    }
+  };
+
+  useEffect(() => {
+    fetchMovies();
+  }, []);
 
   return (
     <section className="flex flex-col items-center">
       <Header />
       <Search searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
+      <section className="all-movies">
+        {errorMessage && <p className="text-red-500">{errorMessage}</p>}
+        <h2>All Movies</h2>
+      </section>
       <br />
       <div className="card-container flex justify-center flex-wrap gap-6 max-w-full sm:mx-30">
         {seriesData.map((series) => {
