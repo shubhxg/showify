@@ -3,7 +3,7 @@ import Card from "./components/Card";
 import Header from "./components/Header";
 import Search from "./components/Search";
 import seriesData from "./data/seriesdata.json";
-import API_BASE_URL from "./constants/constant"
+import { API_BASE_URL } from "./constants/constant";
 
 const API_KEY = import.meta.env.VITE_TMDB_API_KEY;
 const API_OPTIONS = {
