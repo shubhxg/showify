@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import Card from "./components/Card";
 import Header from "./components/Header";
 import Search from "./components/Search";
+import Spinner from "./components/Spinner";
 import seriesData from "./data/seriesdata.json";
 import { API_BASE_URL } from "./constants/constant";
 
@@ -56,14 +57,24 @@ export default function App() {
     <section className="flex flex-col items-center">
       <Header />
       <Search searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
-      <section className="all-movies">
-        {errorMessage && <p className="text-red-500">{errorMessage}</p>}
-      </section>
-      <br />
       <div className="card-container flex justify-center flex-wrap gap-6 max-w-full sm:mx-30">
-        {seriesData.map((series) => {
-          return (
-            // passing the props to the card component
+        {isLoading ? (
+          <Spinner />
+        ) : errorMessage ? (
+          <p className="text-red-500">{errorMessage}</p>
+        ) : (
+          <ul>
+            {movieList.map((movie) => (
+              <p key={movie.id} className="text-white gap-2rem">{movie.title}</p>
+            ))}
+          </ul>
+        )
+        }
+      </div>
+      <br />
+      {/* <div className="card-container flex justify-center flex-wrap gap-6 max-w-full sm:mx-30">
+        {seriesData.map((series) => (
+          // passing the props to the card component
             <Card
               key={series.id}
               rating={series.seriesRating}
@@ -71,9 +82,8 @@ export default function App() {
               name={series.seriesName}
               isNerdy={series.isNerdy}
             />
-          );
-        })}
-      </div>
+        ))}
+      </div> */}
     </section>
   );
 }
