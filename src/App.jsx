@@ -73,19 +73,6 @@ export default function App() {
           ))
         )}
       </div>
-      <br />
-      {/* <div className="card-container flex justify-center flex-wrap gap-6 max-w-full sm:mx-30">
-        {seriesData.map((series) => (
-          // passing the props to the card component
-            <Card
-              key={series.id}
-              rating={series.seriesRating}
-              imgSource={series.imgSource}
-              name={series.seriesName}
-              isNerdy={series.isNerdy}
-            />
-        ))}
-      </div> */}
     </section>
   );
 }
