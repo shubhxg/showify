@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { IMAGE_BASE_URL } from "../constants/constant";
 
 export default function Card({ imgSource, name, rating, isNerdy }) {
   const [count, setCount] = useState(0);
@@ -17,7 +18,7 @@ export default function Card({ imgSource, name, rating, isNerdy }) {
     >
       <img
         className="object-cover mb-4 rounded-xl w-[250px] h-[200px]"
-        src={imgSource}
+        src={`${IMAGE_BASE_URL}${imgSource}`}
         alt="Card"
       />
       <h3 className="text-2xl my-1 font-bold flex">{name}</h3>
