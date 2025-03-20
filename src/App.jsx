@@ -3,7 +3,6 @@ import Card from "./components/Card";
 import Header from "./components/Header";
 import Search from "./components/Search";
 import Spinner from "./components/Spinner";
-import seriesData from "./data/seriesdata.json";
 import { API_BASE_URL } from "./constants/constant";
 
 const API_KEY = import.meta.env.VITE_TMDB_API_KEY;
@@ -63,13 +62,16 @@ export default function App() {
         ) : errorMessage ? (
           <p className="text-red-500">{errorMessage}</p>
         ) : (
-          <ul>
-            {movieList.map((movie) => (
-              <p key={movie.id} className="text-white gap-2rem">{movie.title}</p>
-            ))}
-          </ul>
-        )
-        }
+          movieList.map((movie) => (
+            <Card
+              key={movie.id}
+              rating={movie.vote_average}
+              imgSource={movie.poster_path}
+              name={movie.title}
+              isNerdy={movie.adult}
+            />
+          ))
+        )}
       </div>
       <br />
       {/* <div className="card-container flex justify-center flex-wrap gap-6 max-w-full sm:mx-30">
