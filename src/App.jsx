@@ -11,16 +11,19 @@ const API_OPTIONS = {
   headers: {
     accept: "application/json",
     Authorization: `Bearer ${API_KEY}`,
-  }
+  },
 };
-
 
 export default function App() {
   // defined here because its a global state
   const [searchTerm, setSearchTerm] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
+  const [movieList, setMovieList] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
 
   const fetchMovies = async () => {
+    setIsLoading(true);
+    setErrorMessage("");
     try {
       const endpoint = `${API_BASE_URL}/discover/movie?sort_by=popularity.desc`;
       const response = await fetch(endpoint, API_OPTIONS);
@@ -30,15 +33,19 @@ export default function App() {
       }
       const data = await response.json();
 
-      if (data.Response === 'False') {
-        setErrorMessage(data.Error || 'Failed to fetch movies');
+      if (data.Response === "False") {
+        setErrorMessage(data.Error || "Failed to fetch movies");
+        setMovieList([]);
+        return;
       }
+      setMovieList(data.results || []);
 
       console.log(data);
     } catch (error) {
       console.log(`Error fetching movies: ${error}`);
       setErrorMessage(`${error}. Please try again later`);
-    }
+    } finally {
+      setIsLoading(false);}
   };
 
   useEffect(() => {
