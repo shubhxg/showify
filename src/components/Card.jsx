@@ -1,14 +1,9 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { IMAGE_BASE_URL } from "../constants/constant";
 
 export default function Card({ imgSource, name, rating, isNerdy }) {
-  const [count, setCount] = useState(0);
   const [hasLiked, setHasLiked] = useState(false);
-
-  useEffect(() => {
-    console.log(`Card been rendered!`);
-  }, [hasLiked]);
-
+  
   return (
     <div
       className="cursor-pointer card py-3 px-3 duration-300 ease-out rounded-2xl  hover:bg-[#494871] outline-[#331c5c] outline-1 hover:outline-violet-600 hover:outline-1"
