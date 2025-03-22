@@ -16,12 +16,14 @@ export default function Card({ imgSource, name, rating, isNerdy }) {
         src={`${IMAGE_BASE_URL}${imgSource}`}
         alt="Card"
       />
-      <h3 className="sm:text-md my-1 font-bold flex">{name}</h3>
-      <h5 className="text-md flex">⭐ {Number(rating).toFixed(1)}</h5>
+      <h3 className="sm:text-md my-1 font-bold flex">
+        {name.length > 27 ? `${name.substring(0, 27)}...` : name}
+      </h3>
+      <h6 className="text-sm flex font-medium">⭐ {Number(rating).toFixed(1)}</h6>
       <div className="flex justify-between">
-        <h5 className="text-md mt-2 text-gray-500">
+        <h6 className="text-md mt-2 text-gray-500">
           {isNerdy ? "Nerdy Show" : "Drama/Comedy"}
-        </h5>
+        </h6>
         <button
           onClick={() => setHasLiked((prevState) => !prevState)}
           className={
