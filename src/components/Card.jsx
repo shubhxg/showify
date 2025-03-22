@@ -21,7 +21,7 @@ export default function Card({ imgSource, name, rating, isNerdy }) {
         src={`${IMAGE_BASE_URL}${imgSource}`}
         alt="Card"
       />
-      <h3 className="text-2xl my-1 font-bold flex">{name}</h3>
+      <h3 className="sm:text-md my-1 font-bold flex">{name}</h3>
       <h5 className="text-md flex">⭐ {Number(rating).toFixed(1)}</h5>
       <div className="flex justify-between">
         <h5 className="text-md mt-2 text-gray-500">
