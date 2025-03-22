@@ -5,7 +5,7 @@ export default function Card({ imgSource, name, rating, isNerdy }) {
   const [hasLiked, setHasLiked] = useState(false);
   
   return (
-    <div className="cursor-pointer py-3 px-3 duration-200 ease-in-out rounded-2xl bg-[#19142f] hover:bg-[#3a395a] hover:outline-violet-600 hover:outline-1 hover:scale-110">
+    <div className="cursor-pointer py-3 px-3 duration-200 ease-in-out rounded-2xl bg-[#19142f] hover:bg-[#3a395a] hover:outline-violet-600 hover:outline-1 hover:scale-110 transform-gpu will-change-transform">
       <img
         className="object-cover mb-4 rounded-xl w-[250px] h-[200px]"
         src={`${IMAGE_BASE_URL}${imgSource}`}
