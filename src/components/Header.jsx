@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function Header() {
   return (
-    <header className="max-w-full mt-24 flex flex-col items-center text-center">
+    <header className="max-w-full mt-12 flex flex-col items-center text-center">
       <img src="/hero.png" alt="Hero Banner Image" className="sm:w-92 w-54" />
       <h1 className="sm:mt-2 sm:text-4xl text-2xl tracking-tighter font-bold sm:w-2xl sm:leading-12">
         Find Your {""}

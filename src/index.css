@@ -4,9 +4,7 @@
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   line-height: 1.5;
   font-weight: 400;
-
   color: rgba(255, 255, 255, 0.87);
-
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -84,7 +82,6 @@ section {
 
 /* Firefox compatibility */
 * {
-  scrollbar-width: thin;
   scrollbar-color: #381095 rgba(11, 3, 36, 0.9);
 }
 
