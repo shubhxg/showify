@@ -65,10 +65,7 @@ export default function App() {
           movieList.map((movie) => (
             <Card
               key={movie.id}
-              rating={movie.vote_average}
-              imgSource={movie.poster_path}
-              name={movie.title}
-              isNerdy={movie.adult}
+              movie={movie}
             />
           ))
         )}

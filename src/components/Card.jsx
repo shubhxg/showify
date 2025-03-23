@@ -1,21 +1,21 @@
 import { useState } from "react";
 import { IMAGE_BASE_URL } from "../constants/constant";
 
-export default function Card({ imgSource, name, rating, isNerdy }) {
+export default function Card({ movie: { poster_path, title, vote_average, isNerdy } }) {
   const [hasLiked, setHasLiked] = useState(false);
-  
+
   return (
     <div className="cursor-pointer p-4 duration-200 ease-in-out rounded-2xl bg-[#19142f] hover:bg-[#3a395a] outline outline-transparent hover:outline-violet-600 hover:scale-110 transform-gpu will-change-transform">
       <img
         className="object-cover mb-4 rounded-xl w-[250px] h-[200px]"
-        src={`${IMAGE_BASE_URL}${imgSource}`}
+        src={`${IMAGE_BASE_URL}${poster_path}`}
         alt="Card"
       />
       <h3 className="sm:text-md my-1 font-bold flex">
-        {name.length > 27 ? `${name.substring(0, 27)}...` : name}
+        {title.length > 27 ? `${title.substring(0, 27)}...` : title}
       </h3>
       <h6 className="text-md flex font-medium">
-        ⭐ {Number(rating).toFixed(1)}
+        ⭐ {Number(vote_average).toFixed(1)}
       </h6>
       <div className="flex justify-between">
         <h6 className="text-md mt-2 text-gray-500">
