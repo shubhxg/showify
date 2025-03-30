@@ -7,7 +7,7 @@ export default function Card({ movie: { poster_path, title, vote_average, origin
   return (
     <div className="text-white cursor-pointer p-4 duration-200 ease-in-out rounded-2xl bg-[#19142f] hover:bg-[#3a395a] outline outline-transparent hover:outline-violet-600 hover:scale-110 transform-gpu will-change-transform">
       <img
-        className="object-top object-cover mb-4 rounded-xl w-[250px] h-[200px]"
+        className="object-top object-cover mb-4 rounded-xl w-[280px] h-[250px]"
         src={poster_path ? `${IMAGE_BASE_URL}${poster_path}` : "/no-movie.png"}
         alt={title}
       />
