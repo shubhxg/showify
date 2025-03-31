@@ -12,13 +12,14 @@
 }
 
 section {
-  background: linear-gradient(to bottom, rgba(11, 3, 36, 0.9), rgb(17, 17, 17)), url("landing.jpg");
+  background: linear-gradient(to bottom, rgba(26, 4, 52, 0.95), rgb(0, 0, 0)), url("landing.jpg");
   background-size: cover;
   background-position: top;
   min-height: 100vh; /* Ensures section takes full viewport height */
   background-attachment: fixed; /* Prevents background from showing gaps */
   display: flex; 
   flex-direction: column;
+  padding-bottom: 4rem;
 }
 
 @keyframes gradientAnimation {
